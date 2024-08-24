@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "539023829733",
+    "project_id": "lifemamager",
+    "storage_bucket": "lifemamager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539023829733:android:070ca41e0f5c7967e9820c",
+        "android_client_info": {
+          "package_name": "com.example.lifemanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAju7jabU50gPUb7Ukorqb2zcsMo8NcYLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
