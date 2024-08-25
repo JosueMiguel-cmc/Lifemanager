@@ -1,5 +1,6 @@
 package com.example.lifemanager.VIEW;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -46,14 +47,23 @@ public class Cadview extends AppCompatActivity {
                            sna.setBackgroundTint(Color.GREEN);
                            sna.setTextColor(Color.WHITE);
                            sna.show();
+
+                           emailinput.setText("");
+                           senhainput.setText("");
                        }
                    });
 
                }
            }
        });
-
-
+       logbtn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent it = new Intent(getBaseContext(), Logview.class);
+               startActivity(it);
+               finish();
+           }
+       });
 
     }
 }

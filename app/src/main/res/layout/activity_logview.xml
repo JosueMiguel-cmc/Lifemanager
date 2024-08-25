@@ -5,21 +5,21 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VIEW.Cadview">
+    tools:context=".VIEW.Logview">
 
     <TextView
-        android:id="@+id/Titulocad"
+        android:id="@+id/Titulocad2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
-        android:text="Cadastro"
+        android:text="Login"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/textInputLayout22"
         android:layout_width="309dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -27,17 +27,17 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Titulocad">
+        app:layout_constraintTop_toBottomOf="@+id/Titulocad2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailinp"
+            android:id="@+id/emailinp2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/textInputLayout32"
         android:layout_width="309dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -45,37 +45,37 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout22">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/senhainp"
+            android:id="@+id/senhainp2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Senha" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/loginbtn"
+        android:id="@+id/cadastrobtn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="10dp"
-        android:text="Login"
+        android:text="Cadastro"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cadastrarbtn"
+        app:layout_constraintEnd_toStartOf="@+id/loginbtn2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout32" />
 
     <Button
-        android:id="@+id/cadastrarbtn"
+        android:id="@+id/loginbtn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="100dp"
-        android:text="cadastrar"
+        android:text="Logar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/loginbtn"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        app:layout_constraintStart_toEndOf="@+id/cadastrobtn2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout32" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
