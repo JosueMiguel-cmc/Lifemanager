@@ -1,26 +1,59 @@
 package com.example.lifemanager.VIEW;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.lifemanager.R;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+
+import javax.net.ssl.SNIHostName;
 
 public class Cadview extends AppCompatActivity {
-
+    TextInputEditText emailinput, senhainput;
+    Button cadbtn, logbtn;
+    private FirebaseAuth FBA = FirebaseAuth.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_cadview);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+       emailinput = findViewById(R.id.emailinp);
+       senhainput = findViewById(R.id.senhainp);
+       cadbtn = findViewById(R.id.cadastrarbtn);
+       logbtn = findViewById(R.id.loginbtn);
+
+
+       cadbtn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               String email = emailinput.getText().toString();
+               String senha = senhainput.getText().toString();
+               if (email.isEmpty() || senha.isEmpty()){
+                   Snackbar sna = Snackbar.make(findViewById(R.id.cadastrarbtn),"por favor preencha todos os campos!",Snackbar.LENGTH_SHORT);
+                   sna.setBackgroundTint(Color.RED);
+                   sna.setTextColor(Color.WHITE);
+                   sna.show();
+               }else{
+                   FBA.createUserWithEmailAndPassword(email,senha).addOnCompleteListener(task -> {
+                       if (task.isSuccessful()){
+                           Snackbar sna = Snackbar.make(findViewById(R.id.cadastrarbtn),"cadastrado com sucesso!",Snackbar.LENGTH_SHORT);
+                           sna.setBackgroundTint(Color.GREEN);
+                           sna.setTextColor(Color.WHITE);
+                           sna.show();
+                       }
+                   });
+
+               }
+           }
+       });
+
+
+
     }
 }
