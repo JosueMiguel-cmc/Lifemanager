@@ -22,6 +22,11 @@ public class Cadview extends AppCompatActivity {
     private FirebaseAuth FBA = FirebaseAuth.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (FBA.getCurrentUser() != null){
+            Intent it = new Intent(getBaseContext(), PrincipalView.class);
+            startActivity(it);
+            finish();
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadview);
        emailinput = findViewById(R.id.emailinp);
