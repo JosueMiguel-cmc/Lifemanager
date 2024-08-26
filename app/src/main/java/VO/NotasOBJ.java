@@ -3,47 +3,27 @@ package VO;
 import java.util.Date;
 
 public class NotasOBJ {
-    private String idNote;
-    private String NomeNote;
-    private String Conteudo;
-    private Date datadecriaçao;
+    private String title;
+    private String content;
 
-    public NotasOBJ(String idNote, String nomeNote, String conteudo, Date datadecriaçao){
-        this.idNote = idNote;
-        this.NomeNote = nomeNote;
-        this.Conteudo = conteudo;
-        this.datadecriaçao = datadecriaçao;
+    // Construtor padrão
+    public NotasOBJ() {
     }
 
-    public String getIdNote() {
-        return idNote;
+    // Getters e Setters
+    public String getTitle() {
+        return title;
     }
 
-    public void setIdNote(String idNote) {
-        this.idNote = idNote;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getNomeNote() {
-        return NomeNote;
+    public String getContent() {
+        return content;
     }
 
-    public void setNomeNote(String nomeNote) {
-        NomeNote = nomeNote;
-    }
-
-    public String getConteudo() {
-        return Conteudo;
-    }
-
-    public void setConteudo(String conteudo) {
-        Conteudo = conteudo;
-    }
-
-    public Date getDatadecriaçao() {
-        return datadecriaçao;
-    }
-
-    public void setDatadecriaçao(Date datadecriaçao) {
-        this.datadecriaçao = datadecriaçao;
+    public void setContent(String content) {
+        this.content = content;
     }
 }

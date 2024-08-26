@@ -11,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.lifemanager.Areanotas;
 import com.example.lifemanager.R;
 
 public class PrincipalView extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class PrincipalView extends AppCompatActivity {
         btnNotas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(getBaseContext(),activity_notas_view.class);
+                Intent it = new Intent(getBaseContext(), Areanotas.class);
                 startActivity(it);
             }
         });
