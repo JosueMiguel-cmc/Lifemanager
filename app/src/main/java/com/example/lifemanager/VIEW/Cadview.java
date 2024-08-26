@@ -53,8 +53,9 @@ public class Cadview extends AppCompatActivity {
                            sna.setTextColor(Color.WHITE);
                            sna.show();
 
-                           emailinput.setText("");
-                           senhainput.setText("");
+                           Intent it = new Intent(getBaseContext(), PrincipalView.class);
+                           startActivity(it);
+                           finish();
                        }
                    });
 
