@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/nota_titulo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".VIEW.PrincipalView">
@@ -49,7 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/barra_de_nav"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/imgnota" />
+        app:srcCompat="@drawable/caderno_de_notas" />
 
     <Button
         android:id="@+id/btn_nova_nota"
@@ -62,17 +62,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.213"
+        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/barra_de_nav"
-        app:layout_constraintVertical_bias="0.335" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="277dp"
-        tools:layout_editor_absoluteY="309dp" />
+        app:layout_constraintVertical_bias="0.316" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
