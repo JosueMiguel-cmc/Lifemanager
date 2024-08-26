@@ -41,11 +41,23 @@ public class Logview extends AppCompatActivity {
                     sna.setBackgroundTint(Color.RED);
                     sna.setTextColor(Color.WHITE);
                     sna.show();
-                }else{
+                }else if(senha.length() < 6){
+                    Snackbar sna = Snackbar.make(findViewById(R.id.cadastrobtn2),"por favor o campo de senha deve ter mais de 6 digitos",Snackbar.LENGTH_SHORT);
+                    sna.setBackgroundTint(Color.RED);
+                    sna.setTextColor(Color.WHITE);
+                    sna.show();
+                } else{
                     FBA.signInWithEmailAndPassword(email,senha).addOnCompleteListener(task -> {
                        if (task.isSuccessful()){
                            Snackbar sna = Snackbar.make(findViewById(R.id.cadastrobtn2),"Seja bem vindo!" + email,Snackbar.LENGTH_SHORT);
                            sna.setBackgroundTint(Color.GREEN);
+                           sna.setTextColor(Color.WHITE);
+                           sna.show();
+                           Intent it = new Intent(getBaseContext(),PrincipalView.class);
+                           startActivity(it);
+                       }else {
+                           Snackbar sna = Snackbar.make(findViewById(R.id.cadastrobtn2),"Nao foi possivel logar" + email,Snackbar.LENGTH_SHORT);
+                           sna.setBackgroundTint(Color.RED);
                            sna.setTextColor(Color.WHITE);
                            sna.show();
                        }

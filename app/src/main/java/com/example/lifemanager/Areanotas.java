@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -21,13 +22,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import VO.NotasAdapter;
 import VO.NotasOBJ;
 
 public class Areanotas extends AppCompatActivity {
     ListView listaviewnotas;
-    NotasAdapter notasadapter;
-    List<NotasOBJ> notalist;
+    ArrayAdapter<String> notasAdapter;
+    List<String> notalist; // Lista de strings para exibir no ListView
     DatabaseReference databasenotes;
     Button criarnotas;
 
@@ -38,25 +38,30 @@ public class Areanotas extends AppCompatActivity {
 
         listaviewnotas = findViewById(R.id.Listviewnotas);
         notalist = new ArrayList<>();
-        notasadapter = new NotasAdapter(this, notalist);
-        listaviewnotas.setAdapter(notasadapter);
 
-        String iduser = FirebaseAuth.getInstance().getUid();
-        databasenotes = FirebaseDatabase.getInstance().getReference("Notas").child(iduser);
-        databasenotes.addValueEventListener(new ValueEventListener() {
+        databasenotes = FirebaseDatabase.getInstance().getReference("Notas");
+
+        databasenotes.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                notalist.clear();
-                for (DataSnapshot noteSnapshot : dataSnapshot.getChildren()) {
-                    NotasOBJ note = noteSnapshot.getValue(NotasOBJ.class);
-                    notalist.add(note);
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+                    // Obtenha o nome do campo
+                    String fieldName = snapshot.getKey();
+
+                    // Obtenha o valor do campo (converta conforme necessário, por exemplo, para String, Integer, etc.)
+                    String fieldValue = snapshot.getValue(String.class);
+
+                    // Faça algo com o nome e o valor do campo
+                    String nota = "titulo: "+fieldName+" Conteudo: "+fieldValue;
+                    notalist.add(nota);
                 }
-                notasadapter.notifyDataSetChanged();
+
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e("Areanotas", "Database error: " + databaseError.getMessage());
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
 

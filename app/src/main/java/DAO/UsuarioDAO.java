@@ -3,11 +3,9 @@ package DAO;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class UsuarioDAO {
-    FirebaseAuth User;
+    FirebaseAuth User = FirebaseAuth.getInstance();
     public void LogautUser() {
-        if (User != null) {
-            User.getCurrentUser();
             User.signOut();
-        }
+
     }
 }

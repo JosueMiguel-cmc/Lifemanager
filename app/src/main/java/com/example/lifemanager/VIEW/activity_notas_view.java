@@ -3,6 +3,7 @@ package com.example.lifemanager.VIEW;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -18,15 +19,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class activity_notas_view extends AppCompatActivity {
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     EditText conteudo;
     EditText titulo;
-    ImageButton criarnota;
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    Button criarnota;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notas_view);
-    conteudo = findViewById(R.id.areaconteudoNota);
+
+    conteudo = findViewById(R.id.areatituloNota);
     titulo = findViewById(R.id.areatituloNota);
     criarnota = findViewById(R.id.btn_nota_salvar);
 
@@ -34,9 +37,9 @@ public class activity_notas_view extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
             HashMap<String,Object> Notas = new HashMap<>();
+
+
             Notas.put("Titulo",titulo.getText().toString());
             Notas.put("conteudo",conteudo.getText().toString());
 
