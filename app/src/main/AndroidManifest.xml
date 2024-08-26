@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LifeManager"
         tools:targetApi="31">
+        <activity android:name=".VIEW.activity_notas_view"
+            android:exported="false"/>
         <activity
             android:name=".VIEW.PrincipalView"
             android:exported="false" />
