@@ -13,6 +13,10 @@
         android:theme="@style/Theme.LifeManager"
         tools:targetApi="31">
         <activity
+            android:name=".activity_configuracoes_view"
+            android:exported="false"
+            android:label="@string/title_activity_configuracoes_view" />
+        <activity
             android:name=".VIEW.PrincipalView"
             android:exported="false" />
         <activity
