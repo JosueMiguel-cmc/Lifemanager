@@ -1,32 +1,29 @@
 package com.example.lifemanager.VIEW;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.lifemanager.Areanotas;
+import com.example.lifemanager.MinhasNotasView;
 import com.example.lifemanager.R;
 import com.example.lifemanager.activity_calendario_view;
 import com.google.firebase.auth.FirebaseAuth;
-
-import DAO.UsuarioDAO;
 
 public class PrincipalView extends AppCompatActivity {
     Button btnNotas;
     Button btnconfig;
     Button btncancelar;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal_view);
-        btnNotas = findViewById(R.id.btn_nova_nota);
+        btnNotas = findViewById(R.id.btn_minhas_notas);
         btncancelar = findViewById(R.id.btn_calendar);
         btnconfig = findViewById(R.id.btn_config);
 
@@ -41,7 +38,7 @@ public class PrincipalView extends AppCompatActivity {
         btnNotas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(getBaseContext(), Areanotas.class);
+                Intent it = new Intent(getBaseContext(), MinhasNotasView.class);
                 startActivity(it);
 
             }
