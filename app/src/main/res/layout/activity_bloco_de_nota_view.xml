@@ -43,6 +43,7 @@
                 android:layout_height="155dp"
                 android:layout_marginStart="7dp"
                 android:layout_marginEnd="7dp"
+                android:inputType="textMultiLine"
                 android:text="conteudo" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
