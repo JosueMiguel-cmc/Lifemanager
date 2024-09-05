@@ -9,16 +9,20 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_bloco"
-        android:layout_width="195dp"
-        android:layout_height="195dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="20dp"
         app:cardBackgroundColor="#00BCD4"
         app:cardCornerRadius="15dp"
         app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.236"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,14 +31,15 @@
 
             <TextView
                 android:id="@+id/bloco_titulo"
-                android:layout_width="185dp"
+                android:layout_width="match_parent"
                 android:layout_height="24dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="0dp"
                 android:fontFamily="monospace"
+                android:inputType="text"
                 android:text="Titulo"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView

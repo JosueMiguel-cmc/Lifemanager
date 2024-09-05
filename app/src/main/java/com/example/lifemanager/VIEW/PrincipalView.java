@@ -1,6 +1,5 @@
 package com.example.lifemanager.VIEW;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +7,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.lifemanager.Areanotas;
 import com.example.lifemanager.MinhasNotasView;
 import com.example.lifemanager.R;
 import com.example.lifemanager.activity_calendario_view;

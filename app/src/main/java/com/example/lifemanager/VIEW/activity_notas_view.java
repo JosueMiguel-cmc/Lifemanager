@@ -39,21 +39,21 @@ public class activity_notas_view extends AppCompatActivity {
 
             HashMap<String,Object> Notas = new HashMap<>();
 
-
-            Notas.put("Titulo",titulo.getText().toString());
-            Notas.put("conteudo",conteudo.getText().toString());
-
-
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference dataNotas = database.getReference("Notas");
             String iduser = user.getUid();
             String id = dataNotas.push().getKey();
             Notas.put("id_nota",id);
             Notas.put("id_user",iduser);
+            Notas.put("Titulo",titulo.getText().toString());
+            Notas.put("conteudo",conteudo.getText().toString());
+
+
+
 
             dataNotas.child(id).setValue(Notas).addOnCompleteListener(Task ->{
                 if(Task.isSuccessful()){
-                    Snackbar sna = Snackbar.make(findViewById(R.id.btn_nota_salvar),"cadastrado com sucesso!",Snackbar.LENGTH_SHORT);
+                    Snackbar sna = Snackbar.make(findViewById(R.id.btn_nota_salvar),"Notas criadas com sucesso!",Snackbar.LENGTH_SHORT);
                     sna.setBackgroundTint(Color.GREEN);
                     sna.setTextColor(Color.WHITE);
                     sna.show();

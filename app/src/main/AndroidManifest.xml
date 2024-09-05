@@ -15,9 +15,7 @@
         <activity
             android:name=".Bloco_de_notaView"
             android:exported="false" />
-        <activity
-            android:name=".Areanotas"
-            android:exported="false" />
+
         <activity
             android:name=".VIEW.activity_notas_view"
             android:exported="false" />

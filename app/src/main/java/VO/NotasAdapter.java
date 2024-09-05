@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,34 +13,44 @@ import androidx.annotation.Nullable;
 
 import com.example.lifemanager.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class NotasAdapter extends ArrayAdapter<NotasOBJ> {
-    private final Context context;
-    private final List<NotasOBJ> notasList;
+public class NotasAdapter extends BaseAdapter {
 
-    public NotasAdapter(Context context, List<NotasOBJ> notas) {
-        super(context, R.layout.notasitem, notas);
-        this.context = context;
-        this.notasList = notas;
+    ArrayList<NotasOBJ> Notas;
+    Context contexto;
+
+    public NotasAdapter(Context contexto, ArrayList<NotasOBJ> notas){
+        this.Notas = notas;
+        this.contexto = contexto;
     }
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        NotasOBJ nota = notasList.get(position);
+    public int getCount() {
+        return Notas.size();
+    }
 
-        if (convertView == null) {
-            LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.notasitem, parent, false);
-        }
+    @Override
+    public Object getItem(int position) {
+        return Notas.get(position);
+    }
 
-        TextView titleTextView = convertView.findViewById(R.id.Tituloitemnote);
-        TextView contentTextView = convertView.findViewById(R.id.conteudoitemnote);
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
 
-        titleTextView.setText(nota.getTitle());
-        contentTextView.setText(nota.getContent());
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        NotasOBJ notas = Notas.get(position);
 
-        return convertView;
+        View vn = LayoutInflater.from(contexto).inflate(R.layout.activity_bloco_de_nota_view,parent,false);
+        TextView blocotitulo = vn.findViewById(R.id.bloco_titulo);
+        TextView blococonteudo = vn.findViewById(R.id.bloco_conteudo);
+
+        blocotitulo.setText(notas.getTitulo());
+        blococonteudo.setText(notas.getConteudo());
+        return vn;
     }
 }

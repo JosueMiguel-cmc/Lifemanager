@@ -83,31 +83,32 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btn_criar"
         app:layout_constraintTop_toBottomOf="@+id/card_barra" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/Card_notas"
         android:layout_width="408dp"
-        android:layout_height="557dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="500sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_atualizarMinhasnotas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_criar"
         app:layout_constraintVertical_bias="1.0">
 
-        <ScrollView
-            android:id="@+id/scroll_notas"
+        <ListView
+            android:id="@+id/ListViewNotas"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="area notas">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" />
-        </ScrollView>
-
+            android:layout_height="match_parent" />
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_atualizarMinhasnotas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Atualizar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,23 +1,50 @@
 package VO;
 
 public class NotasOBJ {
-    private String title;
-    private String content;
+    private String Titulo;
+    private String conteudo;
+    private String id_nota;  // campo extra
+    private String id_user;  // campo extra
 
     public NotasOBJ() {
-        // Construtor vazio necessário para o Firebase
+
     }
 
-    public NotasOBJ(String title, String content) {
-        this.title = title;
-        this.content = content;
+    public NotasOBJ(String titulo, String conteudo) {
+        this.Titulo = titulo;
+        this.conteudo = conteudo;
     }
 
-    public String getTitle() {
-        return title;
+    // Getters e Setters
+    public String getTitulo() {
+        return Titulo;
     }
 
-    public String getContent() {
-        return content;
+    public void setTitulo(String titulo) {
+        this.Titulo = titulo;
+    }
+
+    public String getConteudo() {
+        return conteudo;
+    }
+
+    public void setConteudo(String conteudo) {
+        this.conteudo = conteudo;
+    }
+
+    public String getId_nota() {
+        return id_nota;
+    }
+
+    public void setId_nota(String id_nota) {
+        this.id_nota = id_nota;
+    }
+
+    public String getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(String id_user) {
+        this.id_user = id_user;
     }
 }
