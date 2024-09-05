@@ -80,7 +80,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/barra_de_nav"
-        app:srcCompat="@drawable/config" />
+        app:srcCompat="@drawable/userpng" />
 
     <Button
         android:id="@+id/btn_config"
@@ -90,7 +90,7 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="#3F51B5"
         android:fontFamily="monospace"
-        android:text="Cofigurações"
+        android:text="Desconectar"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

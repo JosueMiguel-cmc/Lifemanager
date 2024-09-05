@@ -23,6 +23,7 @@ public class activity_notas_view extends AppCompatActivity {
     EditText conteudo;
     EditText titulo;
     Button criarnota;
+    Button voltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,14 @@ public class activity_notas_view extends AppCompatActivity {
     conteudo = findViewById(R.id.areaconteudoNota);
     titulo = findViewById(R.id.areatituloNota);
     criarnota = findViewById(R.id.btn_nota_salvar);
+    voltar = findViewById(R.id.btn_voltar);
 
+    voltar.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            finish();
+        }
+    });
     criarnota.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
