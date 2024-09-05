@@ -18,7 +18,6 @@ public class PrincipalView extends AppCompatActivity {
     Button btnNotas;
     Button btnconfig;
     Button btncancelar;
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +37,8 @@ public class PrincipalView extends AppCompatActivity {
         btnNotas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(getBaseContext(), MinhasNotasView.class);
-                startActivity(it);
+                Intent itMnv = new Intent(getApplicationContext(), MinhasNotasView.class);
+                startActivity(itMnv);
 
             }
         });

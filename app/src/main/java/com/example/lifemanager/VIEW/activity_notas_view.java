@@ -29,7 +29,7 @@ public class activity_notas_view extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notas_view);
 
-    conteudo = findViewById(R.id.areatituloNota);
+    conteudo = findViewById(R.id.areaconteudoNota);
     titulo = findViewById(R.id.areatituloNota);
     criarnota = findViewById(R.id.btn_nota_salvar);
 
